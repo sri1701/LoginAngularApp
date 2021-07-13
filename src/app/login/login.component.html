@@ -1,0 +1,12 @@
+<form [formGroup]="loginForm">
+<div class="container col-12 row">
+    <div class="col-6"><input type="text" formControlName = "userName" value=""  placeholder="UserName" />
+    <span  *ngIf="loginForm.get('userName')?.errors && 
+    loginForm.get('userName')?.hasError('required')">UserName is Required</span>
+    </div>
+    <div class="col-6"><input type="text" formControlName = "password" value="" placeholder="Password" />
+        <span  *ngIf="loginForm.get('password')?.errors && 
+        loginForm.get('password')?.hasError('required')">Password is Required</span></div>
+    <div><button type="button" (click)="login();">LogIn</button></div>
+</div>
+</form>
